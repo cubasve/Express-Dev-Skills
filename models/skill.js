@@ -8,7 +8,7 @@ const skills = [
 module.exports = { 
     getAll: getAll, 
     getOne: getOne,
-    create, create,
+    create: create,
     deleteOne: deleteOne, 
 }
 
@@ -17,7 +17,7 @@ function getAll() {
 }
 
 function getOne(id) { 
-    return skills.find((skill) => skill.id === parseInt(id)); //
+    return skills.find((skill) => skill.id === parseInt(id)); 
 }
 
 function create(skill) {
