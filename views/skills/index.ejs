@@ -11,8 +11,14 @@
     <h1>My Skills</h1>
     <!-- <a href="/skills">Skill List</a> -->
     <ul>
+        <a href="/skills/new">Add a New Skill</a>
         <% skills.forEach(function(sk) {%>
             <li>
+                <form action="/skills/<%= sk.id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                </form>
+
                 <a href="/skills/<%= sk.id%>"><%= sk.skill %></a>
                 <!-- <%= sk.skill %> -->
                 - <%= sk.mastery ? 'mastered' : 'not mastered'%>

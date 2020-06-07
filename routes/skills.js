@@ -20,6 +20,9 @@ const skillsCtrl = require('../controllers/skills'); //require functions from co
 
 
 router.get('/', skillsCtrl.index);
+router.get('/new', skillsCtrl.new); //new must be before :id - or else new would never get hit since router would think it matches :id route and will set :id to new
 router.get('/:id', skillsCtrl.show);
+router.post('/', skillsCtrl.create);
+router.delete('/:id', skillsCtrl.delete);
 
 module.exports = router;

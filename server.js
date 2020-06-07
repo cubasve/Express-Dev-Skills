@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan'); 
+const methodOverride = require('method-override');
 
 
 var indexRouter = require('./routes/index');
@@ -20,6 +21,7 @@ app.use(express.json()); //Send JSON requests in req.body
 app.use(express.urlencoded({ extended: false })); //Takes data from a form and attaches it to req.body
 app.use(cookieParser()); //Parses our cookies info that get sent to server and attach them to request object 
 app.use(express.static(path.join(__dirname, 'public'))); //Handles a static asset (ex. stylesheet, images, JS files)
+app.use(methodOverride('_method')); 
 
 //Routers = middleware that map to specific routes
 app.use('/', indexRouter);
