@@ -6,4 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'My Skills' });
 });
 
-module.exports = router;
+module.exports = router; 

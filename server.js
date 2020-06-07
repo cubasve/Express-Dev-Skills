@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger = require('morgan'); 
 
 
 var indexRouter = require('./routes/index');
@@ -14,13 +14,14 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+ 
+app.use(logger('dev')); //logs our request to terminal
+app.use(express.json()); //Send JSON requests in req.body
+app.use(express.urlencoded({ extended: false })); //Takes data from a form and attaches it to req.body
+app.use(cookieParser()); //Parses our cookies info that get sent to server and attach them to request object 
+app.use(express.static(path.join(__dirname, 'public'))); //Handles a static asset (ex. stylesheet, images, JS files)
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+//Routers = middleware that map to specific routes
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);
 

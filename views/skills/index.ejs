@@ -7,14 +7,15 @@
     <title>My Skills</title>
 </head>
 <body>
+    <a href="/">Home</a>
     <h1>My Skills</h1>
-    <a href="/skills">Skill List</a>
+    <!-- <a href="/skills">Skill List</a> -->
     <ul>
         <% skills.forEach(function(sk) {%>
             <li>
                 <a href="/skills/<%= sk.id%>"><%= sk.skill %></a>
                 <!-- <%= sk.skill %> -->
-                <%= sk.mastery ? 'mastered' : 'not mastered'%>
+                - <%= sk.mastery ? 'mastered' : 'not mastered'%>
             </li>
         <% }); %>
     </ul>

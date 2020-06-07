@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const skillsCtrl = require('../controllers/skills');
+const skillsCtrl = require('../controllers/skills'); //require functions from controllers
+
+// skillsCtrl = {
+//   index: index,
+//   show: show,
+// } - Equivalent to requiring controllers functions in
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
