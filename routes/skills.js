@@ -25,4 +25,4 @@ router.get('/:id', skillsCtrl.show);
 router.post('/', skillsCtrl.create);
 router.delete('/:id', skillsCtrl.delete);
 
-module.exports = router;
+module.exports = router; //export router to controller

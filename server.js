@@ -1,20 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan'); 
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan'); 
 const methodOverride = require('method-override');
 
 
-var indexRouter = require('./routes/index');
-var skillsRouter = require('./routes/skills');
+const indexRouter = require('./routes/index');
+const skillsRouter = require('./routes/skills');
 // const Skill = require('../models/skill'); - don't need anymore since we're connecting this to controllers
 
-var app = express();
+const app = express(); //create the Express app
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //Use EJS as our view engine
  
 app.use(logger('dev')); //logs our request to terminal
 app.use(express.json()); //Send JSON requests in req.body
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //Handles a static asse
 app.use(methodOverride('_method')); 
 
 //Routers = middleware that map to specific routes
-app.use('/', indexRouter);
+app.use('/', indexRouter); 
 app.use('/skills', skillsRouter);
 
 // catch 404 and forward to error handler

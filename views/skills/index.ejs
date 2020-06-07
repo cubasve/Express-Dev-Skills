@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheets" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>My Skills</title>
 </head>
 <body>
     <a href="/">Home</a>
     <h1>My Skills</h1>
-    <!-- <a href="/skills">Skill List</a> -->
     <ul>
         <a href="/skills/new">Add a New Skill</a>
         <% skills.forEach(function(sk) {%>
@@ -21,7 +20,7 @@
 
                 <a href="/skills/<%= sk.id%>"><%= sk.skill %></a>
                 <!-- <%= sk.skill %> -->
-                - <%= sk.mastery ? 'mastered' : 'not mastered'%>
+                - <%= sk.mastery ? 'Mastered' : 'Not Mastered' %>
             </li>
         <% }); %>
     </ul>

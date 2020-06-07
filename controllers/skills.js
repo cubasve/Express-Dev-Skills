@@ -1,6 +1,6 @@
 const Skill = require('../models/skill');
 
-module.exports = {
+module.exports = { //export to views
     index: index,
     show: show, //remember to export function or else nodemon will crash
     new: newSkill,
@@ -35,8 +35,3 @@ function deleteSkill(req, res) {
     res.redirect('/skills');
 }
 
-// router.get('/', function(req,res) {
-//     res.render('skills/index', {
-//         skills: Skill.getAll()
-//     });
-// });

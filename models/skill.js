@@ -5,18 +5,18 @@ const skills = [
     {id: 04, skill: 'Express', mastery: false},
 ]
 
-module.exports = {
-    getAll: getAll,
+module.exports = { //export to controllers
+    getAll: getAll, //key: value --> values are the functions below
     getOne: getOne,
     create, create,
-    delete: deleteOne,
+    deleteOne: deleteOne, 
 }
 
-function getAll() {
+function getAll() { //returns all skills in the array
     return skills;
 }
 
-function getOne() {
+function getOne(id) { //get a particular skill
     return skills.find((skill) => skill.id === parseInt(id));
 }
 
