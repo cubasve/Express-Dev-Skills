@@ -8,19 +8,18 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const skillsRouter = require('./routes/skills');
-// const Skill = require('../models/skill'); - don't need anymore since we're connecting this to controllers
 
-const app = express(); //create the Express app
+const app = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs'); //Use EJS as our view engine
+app.set('view engine', 'ejs'); 
  
-app.use(logger('dev')); //logs our request to terminal
-app.use(express.json()); //Send JSON requests in req.body
-app.use(express.urlencoded({ extended: false })); //Takes data from a form and attaches it to req.body
-app.use(cookieParser()); //Parses our cookies info that get sent to server and attach them to request object 
-app.use(express.static(path.join(__dirname, 'public'))); //Handles a static asset (ex. stylesheet, images, JS files)
+app.use(logger('dev')); 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: false })); 
+app.use(cookieParser()); 
+app.use(express.static(path.join(__dirname, 'public'))); 
 app.use(methodOverride('_method')); 
 
 //Routers = middleware that map to specific routes

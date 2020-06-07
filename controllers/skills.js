@@ -1,8 +1,8 @@
 const Skill = require('../models/skill');
 
-module.exports = { //export to views
+module.exports = { 
     index: index,
-    show: show, //remember to export function or else nodemon will crash
+    show: show, 
     new: newSkill,
     create: create,
     delete: deleteSkill,
